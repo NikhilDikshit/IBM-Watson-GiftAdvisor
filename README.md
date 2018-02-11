@@ -124,24 +124,24 @@ You can use Cloud Foundry to deploy your local version of the app to Bluemix.
   * In the `applications` section of the `manifest.yml` file, change the `name` value to a unique name for your version of the demo app.
   * In the `services` section, specify the name of the Conversation service instance you created for the demo app. If you do not remember the service name, use the `cf services` command to list all services you have created.
 
-   The following example shows a modified `manifest.yml` file:
+     The following example shows a modified `manifest.yml` file:
 
-   ```yml
-   declared-services:
-   conversation-service:
-      label: conversation
-      plan: free
-   applications:
-      name: IBM-Waston-GiftAdvisor-test1
-      command: npm start
-      path: .
-      memory: 256M
-      instances: 1
-      services:
-      - my-conversation-service
-   env:
-      NPM_CONFIG_PRODUCTION: false
-   ```
+     ```yml
+     declared-services:
+     conversation-service:
+        label: conversation
+        plan: free
+     applications:
+        name: IBM-Waston-GiftAdvisor-test1
+        command: npm start
+        path: .
+        memory: 256M
+        instances: 1
+        services:
+        - my-conversation-service
+     env:
+        NPM_CONFIG_PRODUCTION: false
+     ```
 
 1. Push the app to Bluemix:
 
